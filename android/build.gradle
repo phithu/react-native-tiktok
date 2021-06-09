@@ -50,9 +50,11 @@ repositories {
     }
     google()
     jcenter()
+    maven { url 'https://dl.bintray.com/aweme-open-sdk-team/public' }
 }
 
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.bytedance.ies.ugc.aweme:opensdk-oversea-external:0.2.0.2'
 }

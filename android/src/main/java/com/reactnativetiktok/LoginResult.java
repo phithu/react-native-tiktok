@@ -1,31 +1,31 @@
-package com.rntiktok;
+package com.reactnativetiktok;
 
 public class LoginResult {
-    private int code;
-    private String msg;
-    private String info;
+  private int code;
+  private String msg;
+  private String info;
 
-    public int getCode() {
-        return code;
-    }
+  public int getCode() {
+    return code;
+  }
 
-    public void setCode(int code) {
-        this.code = code;
-    }
+  public void setCode(int code) {
+    this.code = code;
+  }
 
-    public String getMsg() {
-        return msg;
-    }
+  public String getMsg() {
+    return msg;
+  }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+  public void setMsg(String msg) {
+    this.msg = msg;
+  }
 
-    public String getInfo() {
-        return info;
-    }
+  public String getInfo() {
+    return info;
+  }
 
-    public void setInfo(String info) {
-        this.info = info;
-    }
+  public void setInfo(String info) {
+    this.info = info;
+  }
 }

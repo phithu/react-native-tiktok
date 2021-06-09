@@ -1,4 +1,4 @@
-package com.rntiktok.tiktokapi;
+package com.reactnativetiktok;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import com.bytedance.sdk.open.tiktok.authorize.model.Authorization;
 import com.bytedance.sdk.open.tiktok.common.handler.IApiEventHandler;
 import com.bytedance.sdk.open.tiktok.common.model.BaseReq;
 import com.bytedance.sdk.open.tiktok.common.model.BaseResp;
-import com.rntiktok.LoginCallback;
-import com.rntiktok.LoginResult;
-import com.rntiktok.TiktokModule;
+import com.reactnativetiktok.LoginCallback;
+import com.reactnativetiktok.LoginResult;
+import com.reactnativetiktok.TiktokModule;
 
 public class TikTokEntryActivity extends Activity implements IApiEventHandler {
 
@@ -43,13 +43,11 @@ public class TikTokEntryActivity extends Activity implements IApiEventHandler {
                     switch (resp.errorCode) {
                         case 0:
                             Authorization.Response response = (Authorization.Response) resp;
-                            result.setMsg("登录成功");
                             result.setInfo(response.authCode);
                             result.setCode(1);
                             break;
                         case -2:
                             result.setCode(0);
-                            result.setMsg("你取消了授权");
                             break;
                         default:
                             result.setCode(-1);
