@@ -1,9 +1,22 @@
 import { NativeModules } from 'react-native';
 
-type TiktokType = {
-  multiply(a: number, b: number): Promise<number>;
+const { TiktokModule } = NativeModules;
+
+interface TiktokModuleInterface {
+  login(): Promise<string>;
+}
+
+const TiktokAPI: TiktokModuleInterface = {
+  login: () => {
+    return new Promise((resolve, reject) => {
+      TiktokModule.login((error: string, data: string) => {
+        if (data) {
+          resolve(data);
+        }
+        reject(new Error(error));
+      });
+    });
+  },
 };
 
-const { Tiktok } = NativeModules;
-
-export default Tiktok as TiktokType;
+export default TiktokAPI;
